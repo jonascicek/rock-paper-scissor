@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/thumb.svg" />
+  <script type="module" defer src="/src/main.js"></script>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="/src/output.css" />
+</head>
+<body class="bg-gray-900 text-white font-metalmania">
+  <!-- Header-Bereich -->
+  <header class="flex flex-col items-center justify-center py-4 bg-gray-800">
+    <h1 class="text-4xl mb-2">Rock Paper Scissors</h1>
+    <div class="flex items-center space-x-4">
+      <span class="text-xl">Score</span>
+      <span id="score" class="text-2xl font-bold text-yellow-400">0</span>
+    </div>
+  </header>
+
+  <!-- Hauptbereich mit Buttons -->
+  <main class="flex justify-center items-center min-h-screen relative">
+    <button data-choice="paper" class="absolute top-0 bg-blue-500 border-4 border-blue-300 rounded-full hover:scale-110 transform transition p-4">
+      <img src="/images/paper.svg" alt="Paper" />
+    </button>
+    <button data-choice="scissors" class="absolute left-10 bottom-0 bg-red-500 border-4 border-red-300 rounded-full hover:scale-110 transform transition p-4">
+      <img src="/images/scissors.svg" alt="Scissors" />
+    </button>
+    <button data-choice="rock" class="absolute right-10 bottom-0 bg-green-500 border-4 border-green-300 rounded-full hover:scale-110 transform transition p-4">
+      <img src="/images/rock.svg" alt="Rock" />
+    </button>
+  </main>
+
+  <!-- Startbildschirm -->
+  <div id="startscreen" class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+    <h1 class="text-6xl">Rock</h1>
+    <h2 class="text-5xl">Paper</h2>
+    <h3 class="text-4xl">Scissors</h3>
+    <button id="startbutton" class="mt-8 bg-yellow-500 text-black font-bold py-2 px-6 rounded-lg hover:scale-105 transform transition">Start Game</button>
+  </div>
+
+  <!-- Regeln -->
+  <div id="rules" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 hidden">
+    <div class="relative bg-white text-black p-6 rounded-lg">
+      <h2 class="text-2xl font-bold">Rules</h2>
+      <p>Rock Paper Scissors is a game that is played between two players...</p>
+      <img src="/images/close.svg" alt="Close" id="closebutton" class="absolute top-2 right-2 cursor-pointer" />
+    </div>
+  </div>
+
+  <!-- Ergebnisanzeige -->
+  <div id="results" class="hidden flex flex-col items-center justify-center min-h-screen text-center">
+    <h3 id="result" class="text-4xl font-bold text-yellow-400">You win</h3>
+    <div class="mt-4">
+      <p class="text-xl">You chose:</p>
+      <div id="userchoice" class="mt-2"></div>
+    </div>
+    <div class="mt-4">
+      <p class="text-xl">Computer chose:</p>
+      <div id="computerchoice" class="mt-2"></div>
+    </div>
+    <button id="playagain" class="mt-8 bg-green-500 text-black font-bold py-2 px-6 rounded-lg hover:scale-105 transform transition">
+      Play Again
+    </button>
+  </div>
+</body>
+</html>
